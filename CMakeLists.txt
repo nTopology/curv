@@ -1,6 +1,8 @@
 project(curv)
 cmake_minimum_required(VERSION 3.10)
 
+add_subdirectory(double-conversion)
+
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4267") # int64 -> int
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4244") # float -> int
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4291") # no matching operator delete found
