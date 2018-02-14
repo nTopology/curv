@@ -58,7 +58,7 @@ struct Frame_Base
     // function arguments, block bindings and other local, temporary values.
     using value_type = Value;
     slot_t size_;
-    value_type array_[0];
+    value_type* array_;
 
     Value& operator[](slot_t i)
     {

@@ -400,6 +400,7 @@ analyse_module(Definition& def, Environ& env)
             std::move(scope.executable_));
     }
     assert(0);
+    return nullptr;
 }
 
 } // namespace curv

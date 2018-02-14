@@ -7,6 +7,8 @@
 #include <curv/context.h>
 #include <curv/gl_context.h>
 
+#include <algorithm>
+
 namespace curv {
 
 const char Function::name[] = "function";

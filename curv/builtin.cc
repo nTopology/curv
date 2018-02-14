@@ -398,8 +398,7 @@ struct Max_Function : public Polyadic_Function
         static double f(double x, double y) {
             // return NaN if either argument is NaN.
             if (x >= y) return x;
-            if (x < y) return y;
-            return 0.0/0.0;
+            return y;
         }
         static const char* name() { return "max"; }
         static Shared<const String> callstr(Value x, Value y) {
@@ -426,8 +425,7 @@ struct Min_Function : public Polyadic_Function
         static double f(double x, double y) {
             // return NaN if either argument is NaN
             if (x <= y) return x;
-            if (x > y) return y;
-            return 0.0/0.0;
+            return y;
         }
         static const char* name() { return "min"; }
         static Shared<const String> callstr(Value x, Value y) {
@@ -620,7 +618,7 @@ struct File_Expr : public Just_Expression
             filepath = fs::path(caller_script_name->c_str()).parent_path()
                 / fs::path(argstr->c_str());
         }
-        auto file = make<File_Script>(make_string(filepath.c_str()), cx);
+        auto file = make<File_Script>(make_string(filepath.string().c_str()), cx);
         Program prog{*file, f.system_};
         std::unique_ptr<Frame> f2 =
             Frame::make(0, f.system_, &f, &callphrase, nullptr);

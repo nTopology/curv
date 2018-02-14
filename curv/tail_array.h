@@ -19,7 +19,7 @@ namespace curv {
 #define TAIL_ARRAY_MEMBERS(T) \
 protected: \
     size_t size_; \
-    T array_[0]; \
+    T* array_; \
 public: \
     using value_type = T; \
  \

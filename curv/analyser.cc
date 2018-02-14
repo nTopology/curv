@@ -158,6 +158,7 @@ Numeral::analyse(Environ& env) const
     default:
         assert(0);
     }
+    return nullptr;
 }
 
 Shared<Segment>
@@ -227,6 +228,7 @@ Unary_Phrase::analyse(Environ& env) const
     default:
         assert(0);
     }
+    return nullptr;
 }
 Shared<Definition>
 Unary_Phrase::as_definition(Environ& env)
@@ -399,6 +401,7 @@ analyse_block(
     } bscope(env);
     adef->add_to_scope(bscope); // throws an exception
     assert(0);
+    return nullptr;
 }
 
 Shared<Meaning>
@@ -541,6 +544,7 @@ Binary_Phrase::analyse(Environ& env) const
     default:
         assert(0);
     }
+    return nullptr;
 }
 
 Shared<Meaning>

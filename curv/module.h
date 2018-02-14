@@ -110,7 +110,7 @@ protected:
     // interface used by Tail_Array. Must be declared last.
     using value_type = Value;
     size_t size_;
-    Value array_[0];
+    Value* array_;
 };
 
 using Module = Tail_Array<Module_Base>;

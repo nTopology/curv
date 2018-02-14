@@ -193,7 +193,7 @@ struct GL_Frame_Base
     // function arguments, block bindings and other local, temporary values.
     using value_type = GL_Value;
     size_t size_;
-    value_type array_[0];
+    value_type* array_;
 
     GL_Value& operator[](size_t i)
     {
