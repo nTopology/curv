@@ -22,6 +22,11 @@ trunc n = if (n >= 0) floor(n) else ceil(n);
 mod(a,m) = a - m * floor(a/m);
 rem(a,m) = a - m * trunc(a/m);
 lerp(a,b,t) = a*(1-t) + b*t;
+
+//linear maping function
+lmap(val, inMin, inMax, outMin, outMax) = 
+outMin + ((outMax - outMin) * (val - inMin)) / (inMax - inMin);
+
 // Smooth Hermite interpolation between 0 and 1 when lo < x < hi.
 // Used to construct a threshold function with a smooth transition.
 // Results are undefined if lo >= hi.
